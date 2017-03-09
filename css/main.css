@@ -1,0 +1,30 @@
+* {
+    outline: 1px solid rgba(255,0,0,0.4);
+}
+body, h1, h2, h3, h4 {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+.container {
+    position: absolute;
+    top:50px;
+    left:0;
+    bottom: 0;
+    right: 0;
+    height: 600px;
+}
+#welcome {
+    margin-top: 150px;
+}
+#welcome button {
+    margin-top: 150px;
+}
+#playerNames {
+    margin-top: 200px;
+}
+#playerNames .second {
+    margin-top: 70px;
+}
+#playerNames button {
+    margin-top: 80px;
+}
