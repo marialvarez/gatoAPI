@@ -1,5 +1,11 @@
 * {
     outline: 1px solid rgba(255,0,0,0.4);
+    font-family: "Annie Use Your Telescope";
+    /*
+    font-family: "Crafty Girls";
+    font-family: "Life Savers";
+    font-family: "Rouge Script";
+    font-family: "Stalemate";*/
 }
 body, h1, h2, h3, h4 {
     margin: 0 auto;
@@ -27,4 +33,32 @@ body, h1, h2, h3, h4 {
 }
 #playerNames button {
     margin-top: 80px;
+}
+------------------------------------------ SECCION INICIO ------ */
+.boton {
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0px #000;
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+}
+/* ----------------------------------------------------------------------- SECCION GAME ------ */
+.game h2 {
+    text-decoration: underline;
+}
+.game table {
+    outline: 1px solid #000;
+    margin: 0 auto;
+    font-size: 50px;
+}
+.game tr {
+    outline: 1px solid #000;
+}
+.game td {
+    outline: 1px solid #000;
+    padding: 25px 45px;
+    height: 131px;
+    width: 110px;
 }
