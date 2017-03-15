@@ -12,9 +12,9 @@ function caremoco(){
     var moco=Math.floor((Math.random()*2));
     bandera = moco;
     if(moco==0){
-        document.getElementById("div_turno").innerHTML="turno del jugador "+oli;
+        document.getElementById("div_turno").innerHTML="Es el turno del jugador: "+oli;
     }else{
-        document.getElementById("div_turno").innerHTML="turno del jugador "+ chaujj;
+        document.getElementById("div_turno").innerHTML="Es el turno del jugador: "+ chaujj;
     }
     /*console.log(moco);*/
 }
@@ -26,16 +26,16 @@ function marcar (id)
     if (bandera == 0 && !opciones[id])
     {
            celda.value=turno;
-           document.getElementById("div_turno").innerHTML="turno del jugador "+ chaujj;
+           document.getElementById("div_turno").innerHTML="Es el turno del jugador: "+ chaujj;
            opciones[id]=1;
             bandera = 1;
            
     }else if(bandera == 1 && !opciones[id]){
            
            celda.value=turno2;
-           document.getElementById("div_turno").innerHTML="turno del jugador "+ oli;
+           document.getElementById("div_turno").innerHTML="Es el turno del jugador: "+ oli;
            opciones[id]=0;
-        bandera = 0;
+           bandera = 0;
     }
     jugadorx(1);
     jugadorx(0);

@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
-	<link rel="stylesheet" href="swat/dist/sweetalert.css">
 	<link rel="stylesheet" href="css/main.css">
 	<meta charset="UTF-8">
 	<title>TIC TAC TOE</title>
@@ -13,7 +12,7 @@
 <body class="text-center">
 <header>
 	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+		<div class="container-fluid btn-primary">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -38,7 +37,7 @@
 		<div class="container">
 
 			<h1>Bienvenido a Gato Loco!</h1>
-			<button id="btn-saludo">Iniciar juego</button>
+			<button id="btn-saludo" class="btn btn-primary btn-lg">Iniciar juego</button>
 
 		</div>
 	</div>
@@ -48,9 +47,11 @@
 	<div class="content">
 		<div class="container">
 			<p>Ingrese el nombre del jugador 1 </p><input class="form-control" type="text" id="jugador1">
+			<br>
+			<br>
 			<p>Ingrese el nombre del jugador 2 <input class="form-control" type="text" id="jugador2"></p>
 			<p class="text-center">
-				<button id="btn-nombres">Comenzar</button>
+				<button id="btn-nombres" class="btn btn-primary btn-lg">Comenzar</button>
 			</p>
 		</div>
 	</div>
@@ -61,23 +62,21 @@
 	<div class="content">
 		<div class="container">
 			<h2>Juego</h2>
-			<div  id="div_contenedor">
-            <div id="div_turno">Es el turno del jugador : </div>
-            <br>
-            <br>
-            <input type="text" class="cuadrito" id="1" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="2" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="3" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="4" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="5" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="6" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="7" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="8" readonly onclick="marcar(this.id)">
-            <input type="text" class="cuadrito" id="9" readonly onclick="marcar(this.id)">
-            <br> 
-            <br>
-            <button onclick="reiniciar()">Reiniciar</button> 
-			</div>
+			<div  id="gameContainer">
+                <div id="div_turno"> </div>
+                <br>
+                <br>
+                <input type="text" class="cuadrito" id="1" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="2" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="3" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="4" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="5" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="6" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="7" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="8" readonly onclick="marcar(this.id)">
+                <input type="text" class="cuadrito" id="9" readonly onclick="marcar(this.id)">
+            </div>
+            <button  class="btn btn-primary btn-lg" onclick="reiniciar()">Reiniciar</button> 
         </div>
     </div>
 </section>            
