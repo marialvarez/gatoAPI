@@ -1,71 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lyft</title>
-    <link rel="icon" type="image/ico" href="image/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Crafty+Girls|Life+Savers|Rouge+Script|Stalemate" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<link rel="stylesheet" href="swat/dist/sweetalert.css">
+    <script></script>
+    <script src="swat/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+	<meta charset="UTF-8">
+	<title>3 en raya</title>
 </head>
-<body>
-    <div class="container text-center">
-        <header style="display:absolute">
-           <ul class="list-inline">
-               <li>Inicio</li>
-               <li>Historial</li>
-           </ul>
-        </header>
-        <section id="welcome">
-           <h2>Bienvenido a Gato Loco!</h2>
-           <button id="button-init">Iniciar Juego</button>
-        </section>
-        <section id="playerNames" style="display:none">
-            <div class="row first">
-                <div class="col-md-8">
-                    <h3>Ingrese el nombre del jugador 1</h3> 
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="row second">
-                <div class="col-md-8">
-                    <h3>Ingrese el nombre del jugador 1</h3> 
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
-            </div>
-            <button>Comenzar</button>
-        </section>
-         <section class="game" style="display: none;">
-        <h2 class="text-center" id="turno"></h2>
-        <table>
-            <tr>
-                <td id="celda1"></td>
-                <td id="celda2"></td>
-                <td id="celda3"></td
-            </tr>
-            <tr>
-                <td id="celda4"></td>
-                <td id="celda5"></td>
-                <td id="celda6"></td>
-            </tr>
-            <tr>
-                <td id="celda7"></td>
-                <td id="celda8"></td>
-                <td id="celda9"></td>
-            </tr>
-        </table>
-        </section>
-       </div>
-    
-    
-    
-    
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/main.js"></script>    
+<body class="text-center">
+<header>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" id="btn-inicio">Inicio</a></li>
+					<li><a href="#" id="btn-historial">Historial</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section id="saludo" class="visible">
+	<div class="content">
+		<div class="container">
+
+			<h1>Bienvenido a Gato Loco!</h1>
+			<button id="btn-saludo">Iniciar juego</button>
+
+		</div>
+	</div>
+</section>
+
+<section id="nombres">
+	<div class="content">
+		<div class="container">
+			<p>Ingrese el nombre del jugador 1 </p><input class="form-control" type="text" id="jugador1">
+			<p>Ingrese el nombre del jugador 2 <input class="form-control" type="text" id="jugador2"></p>
+			<p class="text-center">
+				<button id="btn-nombres">Comenzar</button>
+			</p>
+		</div>
+	</div>
+</section>
+
+
+<section id="juego" >
+	<div class="content">
+		<div class="container">
+			<h2>Juego</h2>
+			<div  id="div_contenedor">
+            <div id="div_turno">Es el turno del jugador : </div>
+            <br>
+            <br>
+            <input type="text" class="cuadrito" id="1" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="2" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="3" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="4" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="5" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="6" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="7" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="8" readonly onclick="marcar(this.id)">
+            <input type="text" class="cuadrito" id="9" readonly onclick="marcar(this.id)">
+            <br> 
+            <br>
+            <button onclick="reiniciar()">Reiniciar</button> 
+			</div>
+        </div>
+    </div>
+</section>            
+<section id="historial">
+	<div class="content">
+		<div class="container">
+			<h2>Historial</h2>
+			<ul class="list-group" id="list-games"></ul>
+		</div>
+	</div>
+</section>
+<section id="comments">
+	<div class="content">
+		<div class="container">
+			<h2 id="title">Historial Detalle</h2>
+			<ul class="list-group" id="list-comments">
+			    
+			</ul>
+			<input id="name" type="text" placeholder="escriba su nombre" class="form-control">
+			<textarea name="content" id="content" placeholder="escriba su comentario"class="form-control" cols="30" rows="10"></textarea>
+			<button id="btn-comments">Comentar</button>
+		</div>
+	</div>
+</section>
+
+
+
+  <section id="historial-detalle">
+    <div class="content">
+        <div class="container">
+            <h2 id="title">Historial detalle</h2>
+            <ul class="list-group" id="lista-comentarios"></ul>
+            <input id="name" type="text" class="form-control">
+            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+            <button id="btn-comentar">Comentar</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
+</html>
