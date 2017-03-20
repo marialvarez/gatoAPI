@@ -43,7 +43,7 @@
 	</div>
 </section>
 
-<section id="nombres">
+<section id="names">
 	<div class="content">
 		<div class="container">
 			<p>Ingrese el nombre del jugador 1 </p><input class="form-control" type="text" id="jugador1">
@@ -76,6 +76,21 @@
                 <input type="text" class="cuadrito" id="8" readonly onclick="marcar(this.id)">
                 <input type="text" class="cuadrito" id="9" readonly onclick="marcar(this.id)">
             </div>
+            <br>
+            <div id="gameMovements">
+                <h3 id="turnOne">
+                    
+                </h3>
+                <h3 id="turnTwo">
+                    
+                </h3>
+            </div>
+            <br>
+            <div>
+                <h2 id="winner"></h2>
+                <h2 id="loser"></h2>
+            </div>
+            <br>
             <button  class="btn btn-primary btn-lg" onclick="reiniciar()">Reiniciar</button> 
         </div>
     </div>

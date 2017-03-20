@@ -18,57 +18,20 @@ function init()
 }
 
 function onClickBtnSaludo() {
-	gotoSection('nombres');    
+	gotoSection('names');
+    $('#jugador1').focus();
+    
 }
 
-/*function onClickBtnNombre() {
-    $.ajax({
-        url:'http://test-ta.herokuapp.com/games',
-        type:'POST',
-          'game': {
-            'winner_player': 'Emmanuel',
-            'loser_player': 'Irene',
-            'number_of_turns_to_win': '8'
-          }
-    }).success(function(_data){
-        console.log('ff');
-    }); 
-	gotoSection('juego');
-}*/
 function onClickBtnJuego() {
-    /* Permite tener 0 y x en la tabla*/
 	
     var jugador1=document.getElementById("jugador1");
     var jugador2=document.getElementById("jugador2");
     localStorage.setItem('nombre_1',jugador1.value);
     localStorage.setItem('nombre_2',jugador2.value);
     
-    var request = new XMLHttpRequest();
-
-    request.open('POST', 'http://test-ta.herokuapp.com/games');
-
-    request.setRequestHeader('Content-Type', 'application/json');
-
-    request.onreadystatechange = function () {
-      if (this.readyState === 4) {
-        console.log('Status:', this.status);
-        console.log('Headers:', this.getAllResponseHeaders());
-        console.log('Body:', this.responseText);
-      }
-    };
-
-    var body = {
-      'game': {
-        'winner_player': jugador1.value,
-        'loser_player': jugador2.value,
-        'number_of_turns_to_win': '3'
-      }
-    };
-
-    request.send(JSON.stringify(body));
-
-        caremoco();
-        gotoSection('juego');
+    caremoco();
+    gotoSection('juego');
 }
 function onClickBtnNombre() {
 	gotoSection('juego');
@@ -81,6 +44,7 @@ function onClickBtnHistorial(evt) {
     gotoSection("historial");
     getHistorial();
 }
+
 function getHistorial(){
     $.ajax({
         url:'http://test-ta.herokuapp.com/games',
@@ -93,7 +57,7 @@ function getHistorial(){
 function drawHistorial(_datos) {
     var list = $('#list-games');
     for(var i in _datos){
-        var html = '<li data-idgame="'+_datos[i].id+'"class="list-group-item">El jugador: '+_datos[i].winner_player +'le hago a '+_datos[i].loser_player+ '<button class="btn">Comentar</button></li>';
+        var html = '<li data-idgame="'+_datos[i].id+'"class="list-group-item">El jugador: '+_datos[i].winner_player +' le ganó a '+_datos[i].loser_player+ '<br><button class="btn">Comentar</button></li>';
         list.append(html);
     }  
 }
@@ -156,8 +120,11 @@ function gotoSection(_identificadorDeSeccion)
 	var nextSection = $('#'+_identificadorDeSeccion);
 
 	nextSection.addClass('visible');
+    currentSection = nextSection;
+    
     //TweenMax.from(nextSection, 1.5, {scale:0.2, opacity:0, ease:Elastic.easeOut});
-	currentSection = nextSection;
+    
+	
 }
 
 

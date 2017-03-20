@@ -65,6 +65,6 @@ section
     background-color: #E6FFE6;
     color:#000;
 }
-#btn-comentar {
-    display: block;
+#turnOne, #turnTwo {
+    font-weight: bold;
 }
