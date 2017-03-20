@@ -47,7 +47,7 @@ function onClickBtnHistorial(evt) {
 
 function getHistorial(){
     $.ajax({
-        url:'http://test-ta.herokuapp.com/games',
+        url:'https://test-ta.herokuapp.com/games',
     }).success(function(_data){
        /*console.log(_data); */
         drawHistorial(_data);
@@ -71,7 +71,7 @@ function onClickBtnItemGame() {
 }
 function getSingleGame(_idGame) {
     $.ajax({
-        url:'http://test-ta.herokuapp.com/games/'+_idGame,
+        url:'https://test-ta.herokuapp.com/games/'+_idGame,
         //los : indican que lo que se encuentra delante de ellos es un parametro, o [] o {} o ?, parametros opcionales
     }).success(function(_data){
         /*console.log(_data.id);*/
@@ -88,7 +88,7 @@ function drawComments(_datos) {
 }
 function getComments(_idGame) {
     $.ajax({
-        url:'http://test-ta.herokuapp.com/games/'+_idGame+'/comments',
+        url:'https://test-ta.herokuapp.com/games/'+_idGame+'/comments',
         //los : indican que lo que se encuentra delante de ellos es un parametro, o [] o {} o ?, parametros opcionales
     }).success(function(_data){
         /*console.log(_data);*/
@@ -102,7 +102,7 @@ function onClickBtnComments() {
 }
 function sendComment(_idGame,_name,_content) {
     $.ajax({
-        url:'http://test-ta.herokuapp.com/games/'+_idGame+'/comments',
+        url:'https://test-ta.herokuapp.com/games/'+_idGame+'/comments',
         type:'POST',
         data:{comment:
                {name:_name,content:_content,game_id:_idGame}
